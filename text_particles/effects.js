@@ -68,7 +68,7 @@ class Effects {
                     const green = pixels[index + 1];
                     const blue = pixels[index + 2];
                     const color = 'rgb(' + red + ',' + green + ',' + blue + ')';
-                    this.particles.push(new Particle(this, x, y, color));
+                    this.particles.push(new TextParticle(this, x, y, color));
                 } 
             }
         }

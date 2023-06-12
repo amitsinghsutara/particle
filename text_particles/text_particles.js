@@ -1,4 +1,4 @@
-class Particle {
+class TextParticle {
     constructor(effect, x, y, color) {
         this.effect = effect;
         this.x = Math.random() * this.effect.canvasWidth;
