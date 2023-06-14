@@ -13,8 +13,15 @@
 </head>
 <body>
 
-    <button id = "switch">switch effects</button>
+    <div class="dropdown-container">
+        <select id="dropdown">
+          <option value="particles">Particles</option>
+          <option value="effects">Effects</option>
+          <option value="monster">Monster</option>
+        </select>
+    </div>
     <canvas id="can"></canvas>
+    <script src="animation/monster.js"></script>
 
     <script src="particles/particle.js"></script>
     <script src="particles/main.js"></script>
@@ -26,5 +33,6 @@
     <!-- <script src="3d_text/main.js"></script> -->
 
     <!-- <script src="learn_particles/main.js"></script> -->
+
 </body>
 </html>

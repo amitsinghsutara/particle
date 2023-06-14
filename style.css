@@ -11,3 +11,28 @@
   top: 0;
   z-index: 1;
 }
+
+.dropdown-container {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.dropdown-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#dropdown {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}

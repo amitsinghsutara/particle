@@ -12,6 +12,10 @@ self.onmessage = function (event) {
   if (message == "handleParticlesUpdate") {
     handleParticlesUpdate();
   }
+
+  if (message == "handleMonsterAnimation") {
+    
+  }
 };
 
 function initParticle(mouse) {
