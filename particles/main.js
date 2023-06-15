@@ -15,7 +15,7 @@ big_monster_image.src = "./assets/big_monster_idle.png";
 let activeCode = "particles";
 let lastTime = 0;
 
-const particleWorker = new Worker("particles/worker.js");
+const particleWorker = new Worker("./workers/particles_worker.js");
 const particlesInstances = [];
 const monster = new Monster(canvas.width, canvas.height, big_monster_image, context);
 
@@ -105,5 +105,4 @@ function animate(timeStamp) {
   requestAnimationFrame(animate);
 }
 
-// Call the appropriate function based on the initial active code
 switchCode();

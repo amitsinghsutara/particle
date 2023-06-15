@@ -1,4 +1,4 @@
-importScripts('particle.js');
+importScripts('../animation/particle.js');
 
 const particleInstancesList = [];
 
