@@ -1,30 +1,29 @@
 class Monster {
-    constructor(width, height, image) {
+    constructor(width, height, image, context) {
       this.width = width;
       this.height = height;
       this.image = image;
-      this.maxFrame = 6;
+      this.context = context;
       this.x = width / 2 - width * 0.243;
       this.y = width / 3;
-      this.fps = 10;
-      this.frameInterval = 1000 / this.fps;
-
-      this.frameTimer = 0;
+      
       this.frameX = 0;
       this.frameY = 0;
+
+      this.monsterWorker = new Worker('./workers/monster_worker.js');
+
+      this.monsterWorker.addEventListener('message', (event) => {
+        const imageData = event.data;
+        this.frameX = imageData.frameX;
+        this.draw(this.context);
+      });
     }
   
     update(deltaTime) {
-      if (this.frameTimer > this.frameInterval) {
-        this.frameTimer = 0;
-        if (this.frameX < this.maxFrame) {
-          this.frameX++;
-        } else {
-          this.frameX = 0;
-        }
-      } else {
-        this.frameTimer += deltaTime;
-      }
+        this.monsterWorker.postMessage({
+            deltaTime: deltaTime,
+            frameX: this.frameX,
+        });
     }
   
     draw(context) {

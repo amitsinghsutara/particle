@@ -17,7 +17,7 @@ let lastTime = 0;
 
 const particleWorker = new Worker("particles/worker.js");
 const particlesInstances = [];
-const monster = new Monster(canvas.width, canvas.height, big_monster_image);;
+const monster = new Monster(canvas.width, canvas.height, big_monster_image, context);
 
 
 dropdown.addEventListener("change", function () {
@@ -100,7 +100,6 @@ function animate(timeStamp) {
     let deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
     monster.update(deltaTime);
-    monster.draw(context)
 
   }
   requestAnimationFrame(animate);
