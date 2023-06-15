@@ -25,6 +25,6 @@ class TextParticle {
 
     update() {
         this.x += (this.originX - this.x) * this.ease;
-        this.y += (this.originY - this.y) * this.ease;
+        this.y += (this.originY - this.y);
     }
 }
