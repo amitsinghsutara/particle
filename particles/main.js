@@ -11,7 +11,7 @@ const mouse = {
 
 const big_monster_image = new Image();
 big_monster_image.src = "./assets/big_monster_idle.png";
-
+console.log("New Consol Statement")
 let activeCode = "particles";
 let lastTime = 0;
 
