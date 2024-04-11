@@ -1,0 +1,20 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - amitsinghsutara
+  categories:
+    - title: Breaking Changes something 🛠
+      labels:
+        - bug
+        - duplicate
+    - title: Exciting New Features 🎉 coming
+      labels:
+        - bug
+        - duplicate
+    - title: Other Changes something
+      labels:
+        - "*"
